@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz@9..144&display=swap');
+
+*{
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 14px;
+  /* outline: 1px solid red; */
+}
+:root{
+  --bg-color: hsl(30, 38%, 92%);
+  --accent-color: hsl(158, 36%, 37%);
+  --dark-accent-color: hsl(158, 36%, 20%);
+  --primary-color-0 : hsl(212, 21%, 14%);
+  --primary-color-50 : hsl(228, 12%, 48%);
+  --primary-color-100 : hsl(0, 0%, 100%);
+}
+html,body{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bg-color);
+  display: grid;
+  place-items: center;
+}
+.product-card{
+  background-color: var(--primary-color-100);
+}
+@media (max-width: 600px) {
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: safe;
+    align-items: center;
+    width: calc(100% - 40px); height: calc(100% - 60px);
+    border-radius: 5px;
+    padding: 0 15px 15px;
+    overflow: hidden;
+  }
+  .product-img {
+    background: url('./images/image-product-mobile.jpg') no-repeat;
+    width: calc(100% + 30px);
+    height: 40%;
+    background-size: 100%;
+  }
+  .product-body{
+    margin-top: 20px;
+    width: 100%;
+    height: 60%;
+  }
+  .product-type {
+    font-size: 12px;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    letter-spacing: 3px;
+    font-weight: 500;
+    margin: 10px 0;
+    color: var(--primary-color-50);
+  }
+  .product-name {
+    font-size: 35px;
+    font-family: 'Fraunces', Arial, Helvetica, sans-serif;
+    margin: 10px 0;
+    color: var(--primary-color-0);
+  }
+  .product-description{
+    font-size: 15px;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: var(--primary-color-50);
+    margin-bottom: 20px;
+  }
+  .current-price {
+    font-size: 30px;
+    color: var(--accent-color);
+    font-family: 'Fraunces', Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    position: relative;
+  }
+  .old-price {
+    font-size: 12px;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: var(--primary-color-50);
+    text-decoration: line-through;
+    margin-left: 15px;
+    position: absolute;
+    transform: translateY(75%);
+  }
+  .cart-add-btn{
+    width: 100%;
+    height: 40px;
+    margin: 15px 0 0;
+    padding: 0;
+    background-color: var(--accent-color);
+    font-size: 15px;
+    font-weight: 500;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    color: var(--primary-color-100);
+    border: none;
+    border-radius: 5px;
+    position: relative;
+  }
+  .cart-add-btn:hover, .cart-add-btn:focus{
+    background-color: var(--dark-accent-color);
+  }
+  .cart-add-btn>#shopping-cart{
+    position: relative;
+    top: 50%; transform: translateY(-100%);
+  }
+}
